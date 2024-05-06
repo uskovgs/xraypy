@@ -7,25 +7,63 @@
     "text": "latex_table.calc_n_digits\nlatex_table.calc_n_digits(x)"
   },
   {
-    "objectID": "reference/index.html",
-    "href": "reference/index.html",
-    "title": "Function reference",
+    "objectID": "reference/get_n_signif_digits.html",
+    "href": "reference/get_n_signif_digits.html",
+    "title": "get_n_signif_digits",
     "section": "",
-    "text": "Functions for correct confidence intervals.\n\n\n\nlatex_range\nMake latex notation for best value and confidence boundaries.\n\n\nformat_number\nFormat number\n\n\ncalc_signif_digits",
+    "text": "get_n_signif_digits\nlatex_table.get_n_signif_digits(x)",
     "crumbs": [
       "Reference",
-      "Function reference"
+      "Mid level functions",
+      "get_n_signif_digits"
     ]
   },
   {
-    "objectID": "reference/index.html#latex_table",
-    "href": "reference/index.html#latex_table",
-    "title": "Function reference",
+    "objectID": "reference/latex_range.html",
+    "href": "reference/latex_range.html",
+    "title": "latex_range",
     "section": "",
-    "text": "Functions for correct confidence intervals.\n\n\n\nlatex_range\nMake latex notation for best value and confidence boundaries.\n\n\nformat_number\nFormat number\n\n\ncalc_signif_digits",
+    "text": "latex_table.latex_range(best, min, max, ndigits='auto')\nMake latex notation for best value and confidence boundaries.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nbest\nnumpy.numpy.ndarray\nbest value\nrequired\n\n\nmin\nnumpy.numpy.ndarray\nlower boundary value\nrequired\n\n\nmax\nnumpy.numpy.ndarray\nupper boundary value\nrequired\n\n\nndigits\n(str, int, numpy.numpy.ndarray)\nnumber of digits after decimal point, by default ‘auto’\n'auto'\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nnumpy.numpy.ndarray\nstring vector\n\n\n\n\n\n\n&gt;&gt;&gt; x = np.random.uniform(1, 10, size=3)\n&gt;&gt;&gt; err_lo = np.random.uniform(0, 1, size=3)\n&gt;&gt;&gt; err_up = np.random.uniform(0, 1, size=3)\n&gt;&gt;&gt; xmin = x - err_lo\n&gt;&gt;&gt; xmax = x + err_up\n&gt;&gt;&gt; latex_range(x, xmin, xmax)\narray(['$6.49_{-0.75}^{+0.06}$', '$5.966_{-0.717}^{+0.008}$',\n   '$2.3_{-0.8}^{+0.7}$'], dtype='&lt;U25')\n&gt;&gt;&gt; latex_range(x, xmin, x + err_lo)\narray(['$6.5\\pm0.7$', '$6.0\\pm0.7$', '$2.3\\pm0.8$'], dtype='&lt;U11')",
     "crumbs": [
       "Reference",
-      "Function reference"
+      "High level functions",
+      "latex_range"
+    ]
+  },
+  {
+    "objectID": "reference/latex_range.html#parameters",
+    "href": "reference/latex_range.html#parameters",
+    "title": "latex_range",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nbest\nnumpy.numpy.ndarray\nbest value\nrequired\n\n\nmin\nnumpy.numpy.ndarray\nlower boundary value\nrequired\n\n\nmax\nnumpy.numpy.ndarray\nupper boundary value\nrequired\n\n\nndigits\n(str, int, numpy.numpy.ndarray)\nnumber of digits after decimal point, by default ‘auto’\n'auto'",
+    "crumbs": [
+      "Reference",
+      "High level functions",
+      "latex_range"
+    ]
+  },
+  {
+    "objectID": "reference/latex_range.html#returns",
+    "href": "reference/latex_range.html#returns",
+    "title": "latex_range",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nnumpy.numpy.ndarray\nstring vector",
+    "crumbs": [
+      "Reference",
+      "High level functions",
+      "latex_range"
+    ]
+  },
+  {
+    "objectID": "reference/latex_range.html#examples",
+    "href": "reference/latex_range.html#examples",
+    "title": "latex_range",
+    "section": "",
+    "text": "&gt;&gt;&gt; x = np.random.uniform(1, 10, size=3)\n&gt;&gt;&gt; err_lo = np.random.uniform(0, 1, size=3)\n&gt;&gt;&gt; err_up = np.random.uniform(0, 1, size=3)\n&gt;&gt;&gt; xmin = x - err_lo\n&gt;&gt;&gt; xmax = x + err_up\n&gt;&gt;&gt; latex_range(x, xmin, xmax)\narray(['$6.49_{-0.75}^{+0.06}$', '$5.966_{-0.717}^{+0.008}$',\n   '$2.3_{-0.8}^{+0.7}$'], dtype='&lt;U25')\n&gt;&gt;&gt; latex_range(x, xmin, x + err_lo)\narray(['$6.5\\pm0.7$', '$6.0\\pm0.7$', '$2.3\\pm0.8$'], dtype='&lt;U11')",
+    "crumbs": [
+      "Reference",
+      "High level functions",
+      "latex_range"
     ]
   },
   {
@@ -36,30 +74,57 @@
     "text": "calc_signif_digits\nlatex_table.calc_signif_digits(x)",
     "crumbs": [
       "Reference",
-      "latex_table",
+      "Mid level functions",
       "calc_signif_digits"
     ]
   },
   {
-    "objectID": "reference/latex_table.format_number.html",
-    "href": "reference/latex_table.format_number.html",
-    "title": "latex_table.format_number",
+    "objectID": "reference/format_number.html",
+    "href": "reference/format_number.html",
+    "title": "format_number",
     "section": "",
-    "text": "latex_table.format_number(x, n_signif_digits=0)\nFormat number\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nx\nnumpy.numpy.array\nfloat/double number array\nrequired\n\n\nn_signif_digits\nint\nnumber of the significant digits, by default 0\n0\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nnumpy.numpy.array\nformatted array"
+    "text": "latex_table.format_number(x, n_signif_digits=0)\nFormat number\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nx\nnumpy.numpy.array\nfloat/double number array\nrequired\n\n\nn_signif_digits\nint\nnumber of the significant digits, by default 0\n0\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nnumpy.numpy.array\nformatted array",
+    "crumbs": [
+      "Reference",
+      "Mid level functions",
+      "format_number"
+    ]
   },
   {
-    "objectID": "reference/latex_table.format_number.html#parameters",
-    "href": "reference/latex_table.format_number.html#parameters",
-    "title": "latex_table.format_number",
+    "objectID": "reference/format_number.html#parameters",
+    "href": "reference/format_number.html#parameters",
+    "title": "format_number",
     "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nx\nnumpy.numpy.array\nfloat/double number array\nrequired\n\n\nn_signif_digits\nint\nnumber of the significant digits, by default 0\n0"
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nx\nnumpy.numpy.array\nfloat/double number array\nrequired\n\n\nn_signif_digits\nint\nnumber of the significant digits, by default 0\n0",
+    "crumbs": [
+      "Reference",
+      "Mid level functions",
+      "format_number"
+    ]
   },
   {
-    "objectID": "reference/latex_table.format_number.html#returns",
-    "href": "reference/latex_table.format_number.html#returns",
-    "title": "latex_table.format_number",
+    "objectID": "reference/format_number.html#returns",
+    "href": "reference/format_number.html#returns",
+    "title": "format_number",
     "section": "",
-    "text": "Type\nDescription\n\n\n\n\nnumpy.numpy.array\nformatted array"
+    "text": "Type\nDescription\n\n\n\n\nnumpy.numpy.array\nformatted array",
+    "crumbs": [
+      "Reference",
+      "Mid level functions",
+      "format_number"
+    ]
+  },
+  {
+    "objectID": "reference/round_vec.html",
+    "href": "reference/round_vec.html",
+    "title": "round_vec",
+    "section": "",
+    "text": "round_vec\nlatex_table.round_vec(x, digits=0)",
+    "crumbs": [
+      "Reference",
+      "Mid level functions",
+      "round_vec"
+    ]
   },
   {
     "objectID": "NEWS.html",
@@ -90,87 +155,81 @@
     "text": "Usage\nThis module is designed for correct rounding of numbers.\n\nimport numpy as np\nimport pandas as pd\nfrom xraypy.latex_table import latex_range\n\nB=3\nx = np.random.uniform(1, 10, size=B)\nerr_lo = np.random.uniform(0, 1, size=B)\nerr_up = np.random.uniform(0, 1, size=B)\nxmin = x - err_lo\nxmax = x + err_up\n\nNon symmetric errors:\n\npd.DataFrame({\n    \"x\" : x,\n    \"xmin\" : xmin,\n    \"xmax\" : xmax,\n    \"latex\": latex_range(x, xmin, xmax)\n})\n\n\n\n\n\n\n\n\n\nx\nxmin\nxmax\nlatex\n\n\n\n\n0\n6.051688\n5.938146\n6.973292\n$6.05_{-0.11}^{+0.92}$\n\n\n1\n9.390410\n9.195756\n9.638920\n$9.39_{-0.19}^{+0.25}$\n\n\n2\n6.046393\n5.620787\n7.030881\n$6.0_{-0.4}^{+1.0}$\n\n\n\n\n\n\n\n\nSymemtric errors:\n\nxmax = x + err_lo\npd.DataFrame({\n    \"x\" : x,\n    \"xmin\" : xmin,\n    \"xmax\" : xmax,\n    \"latex\": latex_range(x, xmin, xmax)\n})\n\n\n\n\n\n\n\n\n\nx\nxmin\nxmax\nlatex\n\n\n\n\n0\n6.051688\n5.938146\n6.165230\n$6.05\\pm0.11$\n\n\n1\n9.390410\n9.195756\n9.585065\n$9.39\\pm0.19$\n\n\n2\n6.046393\n5.620787\n6.471998\n$6.0\\pm0.4$"
   },
   {
-    "objectID": "reference/format_number.html",
-    "href": "reference/format_number.html",
-    "title": "format_number",
+    "objectID": "reference/latex_table.format_number.html",
+    "href": "reference/latex_table.format_number.html",
+    "title": "latex_table.format_number",
     "section": "",
-    "text": "latex_table.format_number(x, n_signif_digits=0)\nFormat number\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nx\nnumpy.numpy.array\nfloat/double number array\nrequired\n\n\nn_signif_digits\nint\nnumber of the significant digits, by default 0\n0\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nnumpy.numpy.array\nformatted array",
+    "text": "latex_table.format_number(x, n_signif_digits=0)\nFormat number\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nx\nnumpy.numpy.array\nfloat/double number array\nrequired\n\n\nn_signif_digits\nint\nnumber of the significant digits, by default 0\n0\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nnumpy.numpy.array\nformatted array"
+  },
+  {
+    "objectID": "reference/latex_table.format_number.html#parameters",
+    "href": "reference/latex_table.format_number.html#parameters",
+    "title": "latex_table.format_number",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nx\nnumpy.numpy.array\nfloat/double number array\nrequired\n\n\nn_signif_digits\nint\nnumber of the significant digits, by default 0\n0"
+  },
+  {
+    "objectID": "reference/latex_table.format_number.html#returns",
+    "href": "reference/latex_table.format_number.html#returns",
+    "title": "latex_table.format_number",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nnumpy.numpy.array\nformatted array"
+  },
+  {
+    "objectID": "reference/get_first_digit.html",
+    "href": "reference/get_first_digit.html",
+    "title": "get_first_digit",
+    "section": "",
+    "text": "get_first_digit\nlatex_table.get_first_digit(x)",
     "crumbs": [
       "Reference",
-      "latex_table",
-      "format_number"
+      "Mid level functions",
+      "get_first_digit"
     ]
   },
   {
-    "objectID": "reference/format_number.html#parameters",
-    "href": "reference/format_number.html#parameters",
-    "title": "format_number",
+    "objectID": "reference/check_ndigits.html",
+    "href": "reference/check_ndigits.html",
+    "title": "check_ndigits",
     "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nx\nnumpy.numpy.array\nfloat/double number array\nrequired\n\n\nn_signif_digits\nint\nnumber of the significant digits, by default 0\n0",
+    "text": "check_ndigits\nlatex_table.check_ndigits(x, ndigits=0)",
     "crumbs": [
       "Reference",
-      "latex_table",
-      "format_number"
+      "Mid level functions",
+      "check_ndigits"
     ]
   },
   {
-    "objectID": "reference/format_number.html#returns",
-    "href": "reference/format_number.html#returns",
-    "title": "format_number",
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Function reference",
     "section": "",
-    "text": "Type\nDescription\n\n\n\n\nnumpy.numpy.array\nformatted array",
+    "text": "Functions for correct confidence intervals.\n\n\n\nlatex_range\nMake latex notation for best value and confidence boundaries.\n\n\n\n\n\n\n\n\n\ncheck_ndigits\n\n\n\nget_first_digit\n\n\n\nget_n_signif_digits\n\n\n\ncalc_signif_digits\n\n\n\nformat_number\nFormat number\n\n\nround_vec",
     "crumbs": [
       "Reference",
-      "latex_table",
-      "format_number"
+      "Function reference"
     ]
   },
   {
-    "objectID": "reference/latex_range.html",
-    "href": "reference/latex_range.html",
-    "title": "latex_range",
+    "objectID": "reference/index.html#high-level-functions",
+    "href": "reference/index.html#high-level-functions",
+    "title": "Function reference",
     "section": "",
-    "text": "latex_table.latex_range(best, min, max, ndigits='auto')\nMake latex notation for best value and confidence boundaries.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nbest\nnumpy.numpy.ndarray\nbest value\nrequired\n\n\nmin\nnumpy.numpy.ndarray\nlower boundary value\nrequired\n\n\nmax\nnumpy.numpy.ndarray\nupper boundary value\nrequired\n\n\nndigits\n(str, int, numpy.numpy.ndarray)\nnumber of digits after decimal point, by default ‘auto’\n'auto'\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nnumpy.numpy.ndarray\nstring vector\n\n\n\n\n\n\n&gt;&gt;&gt; x = np.random.uniform(1, 10, size=3)\n&gt;&gt;&gt; err_lo = np.random.uniform(0, 1, size=3)\n&gt;&gt;&gt; err_up = np.random.uniform(0, 1, size=3)\n&gt;&gt;&gt; xmin = x - err_lo\n&gt;&gt;&gt; xmax = x + err_up\n&gt;&gt;&gt; latex_range(x, xmin, xmax)\narray(['$6.49_{-0.75}^{+0.06}$', '$5.966_{-0.717}^{+0.008}$',\n   '$2.3_{-0.8}^{+0.7}$'], dtype='&lt;U25')\n&gt;&gt;&gt; latex_range(x, xmin, x + err_lo)\narray(['$6.5\\pm0.7$', '$6.0\\pm0.7$', '$2.3\\pm0.8$'], dtype='&lt;U11')",
+    "text": "Functions for correct confidence intervals.\n\n\n\nlatex_range\nMake latex notation for best value and confidence boundaries.",
     "crumbs": [
       "Reference",
-      "latex_table",
-      "latex_range"
+      "Function reference"
     ]
   },
   {
-    "objectID": "reference/latex_range.html#parameters",
-    "href": "reference/latex_range.html#parameters",
-    "title": "latex_range",
+    "objectID": "reference/index.html#mid-level-functions",
+    "href": "reference/index.html#mid-level-functions",
+    "title": "Function reference",
     "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nbest\nnumpy.numpy.ndarray\nbest value\nrequired\n\n\nmin\nnumpy.numpy.ndarray\nlower boundary value\nrequired\n\n\nmax\nnumpy.numpy.ndarray\nupper boundary value\nrequired\n\n\nndigits\n(str, int, numpy.numpy.ndarray)\nnumber of digits after decimal point, by default ‘auto’\n'auto'",
+    "text": "check_ndigits\n\n\n\nget_first_digit\n\n\n\nget_n_signif_digits\n\n\n\ncalc_signif_digits\n\n\n\nformat_number\nFormat number\n\n\nround_vec",
     "crumbs": [
       "Reference",
-      "latex_table",
-      "latex_range"
-    ]
-  },
-  {
-    "objectID": "reference/latex_range.html#returns",
-    "href": "reference/latex_range.html#returns",
-    "title": "latex_range",
-    "section": "",
-    "text": "Type\nDescription\n\n\n\n\nnumpy.numpy.ndarray\nstring vector",
-    "crumbs": [
-      "Reference",
-      "latex_table",
-      "latex_range"
-    ]
-  },
-  {
-    "objectID": "reference/latex_range.html#examples",
-    "href": "reference/latex_range.html#examples",
-    "title": "latex_range",
-    "section": "",
-    "text": "&gt;&gt;&gt; x = np.random.uniform(1, 10, size=3)\n&gt;&gt;&gt; err_lo = np.random.uniform(0, 1, size=3)\n&gt;&gt;&gt; err_up = np.random.uniform(0, 1, size=3)\n&gt;&gt;&gt; xmin = x - err_lo\n&gt;&gt;&gt; xmax = x + err_up\n&gt;&gt;&gt; latex_range(x, xmin, xmax)\narray(['$6.49_{-0.75}^{+0.06}$', '$5.966_{-0.717}^{+0.008}$',\n   '$2.3_{-0.8}^{+0.7}$'], dtype='&lt;U25')\n&gt;&gt;&gt; latex_range(x, xmin, x + err_lo)\narray(['$6.5\\pm0.7$', '$6.0\\pm0.7$', '$2.3\\pm0.8$'], dtype='&lt;U11')",
-    "crumbs": [
-      "Reference",
-      "latex_table",
-      "latex_range"
+      "Function reference"
     ]
   },
   {
