@@ -75,7 +75,7 @@
     "href": "index.html#usage",
     "title": "xraypy",
     "section": "Usage",
-    "text": "Usage\nThis module is designed for correct rounding of numbers.\n\nfrom xraypy.latex_table import format_number,calc_n_digits,get_first_digit\nimport numpy as np\n\nnumbers = np.array([0.1234,0.4768,0.8598])\nerrors = np.array([0.198,0.0746,0.02577691])\n\nformat_number(numbers, calc_n_digits(errors))\n\n['0.1', '0.48', '0.86']"
+    "text": "Usage\nThis module is designed for correct rounding of numbers.\n\nimport numpy as np\nimport pandas as pd\nfrom xraypy.latex_table import latex_range\n\nB=3\nx = np.random.uniform(1, 10, size=B)\nerr_lo = np.random.uniform(0, 1, size=B)\nerr_up = np.random.uniform(0, 1, size=B)\nxmin = x - err_lo\nxmax = x + err_up\n\nNon symmetric errors:\n\npd.DataFrame({\n    \"x\" : x,\n    \"xmin\" : xmin,\n    \"xmax\" : xmax,\n    \"latex\": latex_range(x, xmin, xmax)\n})\n\n\n\n\n\n\n\n\n\nx\nxmin\nxmax\nlatex\n\n\n\n\n0\n6.051688\n5.938146\n6.973292\n$6.05_{-0.11}^{+0.92}$\n\n\n1\n9.390410\n9.195756\n9.638920\n$9.39_{-0.19}^{+0.25}$\n\n\n2\n6.046393\n5.620787\n7.030881\n$6.0_{-0.4}^{+1.0}$\n\n\n\n\n\n\n\n\nSymemtric errors:\n\nxmax = x + err_lo\npd.DataFrame({\n    \"x\" : x,\n    \"xmin\" : xmin,\n    \"xmax\" : xmax,\n    \"latex\": latex_range(x, xmin, xmax)\n})\n\n\n\n\n\n\n\n\n\nx\nxmin\nxmax\nlatex\n\n\n\n\n0\n6.051688\n5.938146\n6.165230\n$6.05\\pm0.11$\n\n\n1\n9.390410\n9.195756\n9.585065\n$9.39\\pm0.19$\n\n\n2\n6.046393\n5.620787\n6.471998\n$6.0\\pm0.4$"
   },
   {
     "objectID": "reference/format_number.html",
