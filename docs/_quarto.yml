@@ -1,6 +1,9 @@
 project:
   type: website
 
+execute: 
+  freeze: auto
+
 # tell quarto to read the generated sidebar
 metadata-files:
   - _sidebar.yml
