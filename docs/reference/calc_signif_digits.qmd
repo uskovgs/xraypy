@@ -1,0 +1,4 @@
+# calc_signif_digits { #xraypy.latex_table.calc_signif_digits }
+
+`latex_table.calc_signif_digits(x)`
+
