@@ -1,3 +1,7 @@
+---
+jupyter: python3
+---
+
 # xraypy
 
 Useful functions
@@ -26,4 +30,3 @@ errors = np.array([0.198,0.0746,0.02577691])
 format_number(numbers, calc_n_digits(errors))
 ```
 
-['0.1', '0.48', '0.86']

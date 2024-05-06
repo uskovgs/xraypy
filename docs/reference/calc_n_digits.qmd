@@ -1,0 +1,4 @@
+# calc_n_digits { #xraypy.latex_table.calc_n_digits }
+
+`latex_table.calc_n_digits(x)`
+

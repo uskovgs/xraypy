@@ -1,0 +1,41 @@
+project:
+  type: website
+
+# tell quarto to read the generated sidebar
+metadata-files:
+  - _sidebar.yml
+
+website:
+  title: "xraypy"
+  navbar:
+    background: light
+    pinned: true
+    search: true
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "Reference"
+        file: reference/index.qmd 
+      - text: "Changelog"
+        file: NEWS.md
+    right:
+      - text: "v.0.0.0.9000"
+      - icon: github
+        href: https://github.com/uskovgs/xraypy
+
+quartodoc:
+  # the name used to import the package you want to create reference docs for
+  package: xraypy
+
+  # write sidebar data to this file
+  sidebar: _sidebar.yml
+
+  sections:
+    - title: latex_table
+      desc: Functions for correct confidence intervals.
+      package: xraypy.latex_table
+      contents:
+        # the functions being documented in the package.
+        # you can refer to anything: class methods, modules, etc..
+        - format_number
+        - calc_n_digits

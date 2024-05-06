@@ -1,0 +1,10 @@
+# Function reference {.doc .doc-index}
+
+## latex_table
+
+Functions for correct confidence intervals.
+
+| | |
+| --- | --- |
+| [format_number](format_number.qmd#xraypy.latex_table.format_number) | Format number |
+| [calc_n_digits](calc_n_digits.qmd#xraypy.latex_table.calc_n_digits) |  |

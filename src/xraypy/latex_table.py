@@ -29,7 +29,21 @@ def calc_n_digits(x):
     return n_signif_digits
 
 
-def format_number(x: np.array, n_signif_digits=0):  # choose `n` significant digits
+def format_number(x: np.array, n_signif_digits=0):
+    """Format number
+
+    Parameters
+    ----------
+    x : np.array
+        float/double number array
+    n_signif_digits : int, optional
+        number of the significant digits, by default 0
+
+    Returns
+    -------
+    np.array
+        formatted array
+    """    
     out = [
         f"%.{ndigits}f" % round(val, ndigits)
         for val, ndigits in zip(x, n_signif_digits)
