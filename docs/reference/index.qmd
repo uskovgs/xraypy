@@ -6,5 +6,6 @@ Functions for correct confidence intervals.
 
 | | |
 | --- | --- |
+| [latex_range](latex_range.qmd#xraypy.latex_table.latex_range) | Make latex notation for best value and confidence boundaries. |
 | [format_number](format_number.qmd#xraypy.latex_table.format_number) | Format number |
-| [calc_n_digits](calc_n_digits.qmd#xraypy.latex_table.calc_n_digits) |  |
+| [calc_signif_digits](calc_signif_digits.qmd#xraypy.latex_table.calc_signif_digits) |  |

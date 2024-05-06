@@ -40,5 +40,6 @@ quartodoc:
       contents:
         # the functions being documented in the package.
         # you can refer to anything: class methods, modules, etc..
+        - latex_range
         - format_number
-        - calc_n_digits
+        - calc_signif_digits

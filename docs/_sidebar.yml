@@ -3,8 +3,9 @@ website:
   - contents:
     - reference/index.qmd
     - contents:
+      - reference/latex_range.qmd
       - reference/format_number.qmd
-      - reference/calc_n_digits.qmd
+      - reference/calc_signif_digits.qmd
       section: latex_table
     id: reference
   - id: dummy-sidebar
