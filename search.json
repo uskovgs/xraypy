@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "NEWS.html",
+    "href": "NEWS.html",
+    "title": "Changelog",
+    "section": "",
+    "text": "xraypy 0.0.0.9000\n\nFirst release"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "xraypy",
+    "section": "",
+    "text": "Useful functions"
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "xraypy",
+    "section": "Installation",
+    "text": "Installation\npython -m pip install git+https://github.com/uskovgs/xraypy.git"
+  },
+  {
+    "objectID": "index.html#usage",
+    "href": "index.html#usage",
+    "title": "xraypy",
+    "section": "Usage",
+    "text": "Usage\nThis module is designed for correct rounding of numbers.\n\nfrom xraypy.latex_table import format_number,calc_n_digits,get_first_digit\nimport numpy as np\n\nnumbers = np.array([0.1234,0.4768,0.8598])\nerrors = np.array([0.198,0.0746,0.02577691])\n\nformat_number(numbers, calc_n_digits(errors))\n\n['0.1', '0.48', '0.86']"
+  },
+  {
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Function reference",
+    "section": "",
+    "text": "Functions for correct confidence intervals.\n\n\n\nformat_number\nFormat number\n\n\ncalc_n_digits"
+  },
+  {
+    "objectID": "reference/index.html#latex_table",
+    "href": "reference/index.html#latex_table",
+    "title": "Function reference",
+    "section": "",
+    "text": "Functions for correct confidence intervals.\n\n\n\nformat_number\nFormat number\n\n\ncalc_n_digits"
+  },
+  {
+    "objectID": "reference/calc_n_digits.html",
+    "href": "reference/calc_n_digits.html",
+    "title": "calc_n_digits",
+    "section": "",
+    "text": "calc_n_digits\nlatex_table.calc_n_digits(x)"
+  },
+  {
+    "objectID": "reference/latex_table.format_number.html",
+    "href": "reference/latex_table.format_number.html",
+    "title": "latex_table.format_number",
+    "section": "",
+    "text": "latex_table.format_number(x, n_signif_digits=0)\nFormat number\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nx\nnumpy.numpy.array\nfloat/double number array\nrequired\n\n\nn_signif_digits\nint\nnumber of the significant digits, by default 0\n0\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nnumpy.numpy.array\nformatted array"
+  },
+  {
+    "objectID": "reference/latex_table.format_number.html#parameters",
+    "href": "reference/latex_table.format_number.html#parameters",
+    "title": "latex_table.format_number",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nx\nnumpy.numpy.array\nfloat/double number array\nrequired\n\n\nn_signif_digits\nint\nnumber of the significant digits, by default 0\n0"
+  },
+  {
+    "objectID": "reference/latex_table.format_number.html#returns",
+    "href": "reference/latex_table.format_number.html#returns",
+    "title": "latex_table.format_number",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nnumpy.numpy.array\nformatted array"
+  },
+  {
+    "objectID": "reference/format_number.html",
+    "href": "reference/format_number.html",
+    "title": "format_number",
+    "section": "",
+    "text": "latex_table.format_number(x, n_signif_digits=0)\nFormat number\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nx\nnumpy.numpy.array\nfloat/double number array\nrequired\n\n\nn_signif_digits\nint\nnumber of the significant digits, by default 0\n0\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nnumpy.numpy.array\nformatted array"
+  },
+  {
+    "objectID": "reference/format_number.html#parameters",
+    "href": "reference/format_number.html#parameters",
+    "title": "format_number",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nx\nnumpy.numpy.array\nfloat/double number array\nrequired\n\n\nn_signif_digits\nint\nnumber of the significant digits, by default 0\n0"
+  },
+  {
+    "objectID": "reference/format_number.html#returns",
+    "href": "reference/format_number.html#returns",
+    "title": "format_number",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nnumpy.numpy.array\nformatted array"
+  },
+  {
+    "objectID": "reference/latex_table.calc_n_digits.html",
+    "href": "reference/latex_table.calc_n_digits.html",
+    "title": "latex_table.calc_n_digits",
+    "section": "",
+    "text": "latex_table.calc_n_digits\nlatex_table.calc_n_digits(x)"
+  }
+]
