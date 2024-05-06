@@ -1,0 +1,4 @@
+# get_n_signif_digits { #xraypy.latex_table.get_n_signif_digits }
+
+`latex_table.get_n_signif_digits(x)`
+

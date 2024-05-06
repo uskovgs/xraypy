@@ -1,0 +1,4 @@
+# get_first_digit { #xraypy.latex_table.get_first_digit }
+
+`latex_table.get_first_digit(x)`
+

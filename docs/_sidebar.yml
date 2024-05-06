@@ -4,8 +4,14 @@ website:
     - reference/index.qmd
     - contents:
       - reference/latex_range.qmd
-      - reference/format_number.qmd
+      section: High level functions
+    - contents:
+      - reference/check_ndigits.qmd
+      - reference/get_first_digit.qmd
+      - reference/get_n_signif_digits.qmd
       - reference/calc_signif_digits.qmd
-      section: latex_table
+      - reference/format_number.qmd
+      - reference/round_vec.qmd
+      section: Mid level functions
     id: reference
   - id: dummy-sidebar

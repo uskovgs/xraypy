@@ -34,12 +34,20 @@ quartodoc:
   sidebar: _sidebar.yml
 
   sections:
-    - title: latex_table
+    - title: High level functions
       desc: Functions for correct confidence intervals.
       package: xraypy.latex_table
       contents:
-        # the functions being documented in the package.
-        # you can refer to anything: class methods, modules, etc..
         - latex_range
-        - format_number
-        - calc_signif_digits
+        
+    - title: Mid level functions
+      desc: 
+      package: xraypy.latex_table
+      contents:
+      - check_ndigits
+      - get_first_digit
+      - get_n_signif_digits
+      - calc_signif_digits
+      - format_number
+      - round_vec
+      

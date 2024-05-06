@@ -1,0 +1,4 @@
+# check_ndigits { #xraypy.latex_table.check_ndigits }
+
+`latex_table.check_ndigits(x, ndigits=0)`
+

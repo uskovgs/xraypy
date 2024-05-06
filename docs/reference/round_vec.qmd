@@ -1,0 +1,4 @@
+# round_vec { #xraypy.latex_table.round_vec }
+
+`latex_table.round_vec(x, digits=0)`
+
