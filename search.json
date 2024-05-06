@@ -11,7 +11,7 @@
     "href": "reference/index.html",
     "title": "Function reference",
     "section": "",
-    "text": "Functions for correct confidence intervals.\n\n\n\nformat_number\nFormat number\n\n\ncalc_n_digits",
+    "text": "Functions for correct confidence intervals.\n\n\n\nlatex_range\nMake latex notation for best value and confidence boundaries.\n\n\nformat_number\nFormat number\n\n\ncalc_signif_digits",
     "crumbs": [
       "Reference",
       "Function reference"
@@ -22,7 +22,7 @@
     "href": "reference/index.html#latex_table",
     "title": "Function reference",
     "section": "",
-    "text": "Functions for correct confidence intervals.\n\n\n\nformat_number\nFormat number\n\n\ncalc_n_digits",
+    "text": "Functions for correct confidence intervals.\n\n\n\nlatex_range\nMake latex notation for best value and confidence boundaries.\n\n\nformat_number\nFormat number\n\n\ncalc_signif_digits",
     "crumbs": [
       "Reference",
       "Function reference"
@@ -118,11 +118,6 @@
     "href": "reference/calc_n_digits.html",
     "title": "calc_n_digits",
     "section": "",
-    "text": "calc_n_digits\nlatex_table.calc_n_digits(x)",
-    "crumbs": [
-      "Reference",
-      "latex_table",
-      "calc_n_digits"
-    ]
+    "text": "calc_n_digits\nlatex_table.calc_n_digits(x)"
   }
 ]
