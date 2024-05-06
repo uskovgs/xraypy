@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://uskovgs.github.io/xraypy/NEWS.html</loc>
-    <lastmod>2024-05-06T16:54:47.845Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uskovgs.github.io/xraypy/index.html</loc>
-    <lastmod>2024-05-06T16:54:48.370Z</lastmod>
+    <loc>https://uskovgs.github.io/xraypy/reference/latex_table.calc_n_digits.html</loc>
+    <lastmod>2024-05-06T17:07:07.332Z</lastmod>
   </url>
   <url>
     <loc>https://uskovgs.github.io/xraypy/reference/index.html</loc>
-    <lastmod>2024-05-06T16:54:48.635Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uskovgs.github.io/xraypy/reference/calc_n_digits.html</loc>
-    <lastmod>2024-05-06T16:54:48.880Z</lastmod>
+    <lastmod>2024-05-06T17:07:07.332Z</lastmod>
   </url>
   <url>
     <loc>https://uskovgs.github.io/xraypy/reference/latex_table.format_number.html</loc>
-    <lastmod>2024-05-06T16:54:49.147Z</lastmod>
+    <lastmod>2024-05-06T17:07:07.332Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uskovgs.github.io/xraypy/NEWS.html</loc>
+    <lastmod>2024-05-06T17:07:07.332Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uskovgs.github.io/xraypy/index.html</loc>
+    <lastmod>2024-05-06T17:07:07.332Z</lastmod>
   </url>
   <url>
     <loc>https://uskovgs.github.io/xraypy/reference/format_number.html</loc>
-    <lastmod>2024-05-06T16:54:49.419Z</lastmod>
+    <lastmod>2024-05-06T17:07:07.332Z</lastmod>
   </url>
   <url>
-    <loc>https://uskovgs.github.io/xraypy/reference/latex_table.calc_n_digits.html</loc>
-    <lastmod>2024-05-06T16:54:49.663Z</lastmod>
+    <loc>https://uskovgs.github.io/xraypy/reference/calc_n_digits.html</loc>
+    <lastmod>2024-05-06T17:07:07.332Z</lastmod>
   </url>
 </urlset>
