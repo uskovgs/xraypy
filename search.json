@@ -29,6 +29,18 @@
     ]
   },
   {
+    "objectID": "reference/calc_signif_digits.html",
+    "href": "reference/calc_signif_digits.html",
+    "title": "calc_signif_digits",
+    "section": "",
+    "text": "calc_signif_digits\nlatex_table.calc_signif_digits(x)",
+    "crumbs": [
+      "Reference",
+      "latex_table",
+      "calc_signif_digits"
+    ]
+  },
+  {
     "objectID": "reference/latex_table.format_number.html",
     "href": "reference/latex_table.format_number.html",
     "title": "latex_table.format_number",
@@ -111,6 +123,54 @@
       "Reference",
       "latex_table",
       "format_number"
+    ]
+  },
+  {
+    "objectID": "reference/latex_range.html",
+    "href": "reference/latex_range.html",
+    "title": "latex_range",
+    "section": "",
+    "text": "latex_table.latex_range(best, min, max, ndigits='auto')\nMake latex notation for best value and confidence boundaries.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nbest\nnumpy.numpy.ndarray\nbest value\nrequired\n\n\nmin\nnumpy.numpy.ndarray\nlower boundary value\nrequired\n\n\nmax\nnumpy.numpy.ndarray\nupper boundary value\nrequired\n\n\nndigits\n(str, int, numpy.numpy.ndarray)\nnumber of digits after decimal point, by default ‘auto’\n'auto'\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nnumpy.numpy.ndarray\nstring vector\n\n\n\n\n\n\n&gt;&gt;&gt; x = np.random.uniform(1, 10, size=3)\n&gt;&gt;&gt; err_lo = np.random.uniform(0, 1, size=3)\n&gt;&gt;&gt; err_up = np.random.uniform(0, 1, size=3)\n&gt;&gt;&gt; xmin = x - err_lo\n&gt;&gt;&gt; xmax = x + err_up\n&gt;&gt;&gt; latex_range(x, xmin, xmax)\narray(['$6.49_{-0.75}^{+0.06}$', '$5.966_{-0.717}^{+0.008}$',\n   '$2.3_{-0.8}^{+0.7}$'], dtype='&lt;U25')\n&gt;&gt;&gt; latex_range(x, xmin, x + err_lo)\narray(['$6.5\\pm0.7$', '$6.0\\pm0.7$', '$2.3\\pm0.8$'], dtype='&lt;U11')",
+    "crumbs": [
+      "Reference",
+      "latex_table",
+      "latex_range"
+    ]
+  },
+  {
+    "objectID": "reference/latex_range.html#parameters",
+    "href": "reference/latex_range.html#parameters",
+    "title": "latex_range",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nbest\nnumpy.numpy.ndarray\nbest value\nrequired\n\n\nmin\nnumpy.numpy.ndarray\nlower boundary value\nrequired\n\n\nmax\nnumpy.numpy.ndarray\nupper boundary value\nrequired\n\n\nndigits\n(str, int, numpy.numpy.ndarray)\nnumber of digits after decimal point, by default ‘auto’\n'auto'",
+    "crumbs": [
+      "Reference",
+      "latex_table",
+      "latex_range"
+    ]
+  },
+  {
+    "objectID": "reference/latex_range.html#returns",
+    "href": "reference/latex_range.html#returns",
+    "title": "latex_range",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nnumpy.numpy.ndarray\nstring vector",
+    "crumbs": [
+      "Reference",
+      "latex_table",
+      "latex_range"
+    ]
+  },
+  {
+    "objectID": "reference/latex_range.html#examples",
+    "href": "reference/latex_range.html#examples",
+    "title": "latex_range",
+    "section": "",
+    "text": "&gt;&gt;&gt; x = np.random.uniform(1, 10, size=3)\n&gt;&gt;&gt; err_lo = np.random.uniform(0, 1, size=3)\n&gt;&gt;&gt; err_up = np.random.uniform(0, 1, size=3)\n&gt;&gt;&gt; xmin = x - err_lo\n&gt;&gt;&gt; xmax = x + err_up\n&gt;&gt;&gt; latex_range(x, xmin, xmax)\narray(['$6.49_{-0.75}^{+0.06}$', '$5.966_{-0.717}^{+0.008}$',\n   '$2.3_{-0.8}^{+0.7}$'], dtype='&lt;U25')\n&gt;&gt;&gt; latex_range(x, xmin, x + err_lo)\narray(['$6.5\\pm0.7$', '$6.0\\pm0.7$', '$2.3\\pm0.8$'], dtype='&lt;U11')",
+    "crumbs": [
+      "Reference",
+      "latex_table",
+      "latex_range"
     ]
   },
   {
