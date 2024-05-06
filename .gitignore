@@ -1,1 +1,8 @@
-*DS_Store*
+.DS_Store
+
+# Quarto
+/.quarto/
+_site/
+objects.json
+reference/
+src/
