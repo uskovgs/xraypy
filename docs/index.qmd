@@ -20,7 +20,7 @@ python -m pip install git+https://github.com/uskovgs/xraypy.git
 
 This module is designed for correct rounding of numbers.
 
-The primary functions are latex_range and latex_range_sci.
+The primary functions are `latex_range` and `latex_range_sci`.
 
 ### Numbers without exponents
 
