@@ -1,0 +1,53 @@
+# latex_range_sci { #xraypy.latex_table.latex_range_sci }
+
+`latex_table.latex_range_sci(best, min, max, ndigits='auto', symmetry=False, base_pow=None)`
+
+Make latex notation for best value and confidence boundaries
+
+## Parameters
+
+| Name       | Type                        | Description                                                                     | Default    |
+|------------|-----------------------------|---------------------------------------------------------------------------------|------------|
+| `best`     | array_like                  | best value                                                                      | _required_ |
+| `min`      | array_like                  | lower boundary value                                                            | _required_ |
+| `max`      | array_like                  | upper boundary value                                                            | _required_ |
+| `ndigits`  | str,int,array_like optional | number of digits after decimal point, by default "auto"                         | `'auto'`   |
+| `symmetry` | bool                        | if errors are symmetric show as value+/-err, by default False                   | `False`    |
+| `base_pow` | int                         | set to numeric if you want to make column with the same power., by default None | `None`     |
+
+## Returns
+
+| Type       | Description   |
+|------------|---------------|
+| array_like | string vector |
+
+## Examples
+
+Set initial vector
+
+```python
+>>> import numpy as np
+>>> x = np.array([1e21, 3e22, 1e23])
+>>> err = np.array([0.1e21, 0.5e21, 0.1e23])
+```
+
+```python
+>>> latex_range_sci(best = x, min = x - err, max = x + err, ndigits = 2)
+['$1.00_{-0.10}^{+0.10}~\times10^{21}$',
+'$0.30_{-0.01}^{+0.00}~\times10^{23}$',
+'$1.00_{-0.10}^{+0.10}~\times10^{23}$']
+```
+
+```python
+>>> latex_range_sci(x, x - err, x + err, ndigits = 3, symmetry = True)
+['$(1.000\pm0.100)~\times10^{21}$',
+'$(0.300\pm0.005)~\times10^{23}$',
+'$(1.000\pm0.100)~\times10^{23}$']
+```
+
+```python
+>>> latex_range_sci(x, x - err, x + err, ndigits = 2, base_pow=21)
+['$1.00_{-0.10}^{+0.10}~\times10^{21}$',
+'$30.00_{-0.50}^{+0.50}~\times10^{21}$',
+'$100.00_{-10.00}^{+10.00}~\times10^{21}$']
+```

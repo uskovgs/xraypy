@@ -2,3 +2,17 @@
 
 `latex_table.check_ndigits(x, ndigits=0)`
 
+Checking whether the number of significant digits is enough
+
+## Parameters
+
+| Name      | Type              | Description                                | Default    |
+|-----------|-------------------|--------------------------------------------|------------|
+| `x`       | array_like        | array of numbers                           | _required_ |
+| `ndigits` | (int, array_like) | number of significant digits, by default 0 | `0`        |
+
+## Raises
+
+| Type    | Description                          |
+|---------|--------------------------------------|
+| Warning | Is the argument `ndigits` too small? |

@@ -2,3 +2,16 @@
 
 `latex_table.get_n_signif_digits(x)`
 
+Get the optimal number of significant digits
+
+## Parameters
+
+| Name   | Type       | Description   | Default    |
+|--------|------------|---------------|------------|
+| `x`    | array_like | Input data.   | _required_ |
+
+## Returns
+
+| Type    | Description                          |
+|---------|--------------------------------------|
+| ndarray | array of int type significant digits |

@@ -7,14 +7,15 @@ Functions for correct confidence intervals.
 | | |
 | --- | --- |
 | [latex_range](latex_range.qmd#xraypy.latex_table.latex_range) | Make latex notation for best value and confidence boundaries. |
+| [latex_range_sci](latex_range_sci.qmd#xraypy.latex_table.latex_range_sci) | Make latex notation for best value and confidence boundaries |
 
 ## Mid level functions
 
 | | |
 | --- | --- |
-| [check_ndigits](check_ndigits.qmd#xraypy.latex_table.check_ndigits) |  |
+| [check_ndigits](check_ndigits.qmd#xraypy.latex_table.check_ndigits) | Checking whether the number of significant digits is enough |
 | [get_first_digit](get_first_digit.qmd#xraypy.latex_table.get_first_digit) |  |
-| [get_n_signif_digits](get_n_signif_digits.qmd#xraypy.latex_table.get_n_signif_digits) |  |
+| [get_n_signif_digits](get_n_signif_digits.qmd#xraypy.latex_table.get_n_signif_digits) | Get the optimal number of significant digits |
 | [calc_signif_digits](calc_signif_digits.qmd#xraypy.latex_table.calc_signif_digits) |  |
 | [format_number](format_number.qmd#xraypy.latex_table.format_number) | Format number |
 | [round_vec](round_vec.qmd#xraypy.latex_table.round_vec) |  |

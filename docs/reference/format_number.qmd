@@ -6,13 +6,20 @@ Format number
 
 ## Parameters
 
-| Name              | Type              | Description                                    | Default    |
-|-------------------|-------------------|------------------------------------------------|------------|
-| `x`               | numpy.numpy.array | float/double number array                      | _required_ |
-| `n_signif_digits` | int               | number of the significant digits, by default 0 | `0`        |
+| Name              | Type       | Description                                    | Default    |
+|-------------------|------------|------------------------------------------------|------------|
+| `x`               | array_like | Input data                                     | _required_ |
+| `n_signif_digits` | int        | number of the significant digits, by default 0 | `0`        |
 
 ## Returns
 
 | Type              | Description     |
 |-------------------|-----------------|
 | numpy.numpy.array | formatted array |
+
+## Examples
+
+```python
+>>> format_number(0.198, calc_signif_digits(0.198))
+['0.2']
+```

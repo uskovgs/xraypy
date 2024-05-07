@@ -4,6 +4,10 @@ project:
 execute: 
   freeze: auto
 
+format:
+  html:
+    toc: true
+
 # tell quarto to read the generated sidebar
 metadata-files:
   - _sidebar.yml
@@ -14,6 +18,7 @@ website:
     background: light
     pinned: true
     search: true
+    toc: true
     left:
       - text: "Home"
         file: index.qmd
@@ -31,7 +36,7 @@ quartodoc:
   package: xraypy
 
   # write sidebar data to this file
-  sidebar: _sidebar.yml
+  sidebar: _sidebar.quartoyml
 
   sections:
     - title: High level functions
@@ -39,7 +44,7 @@ quartodoc:
       package: xraypy.latex_table
       contents:
         - latex_range
-        
+        - latex_range_sci
     - title: Mid level functions
       desc: 
       package: xraypy.latex_table

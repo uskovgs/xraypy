@@ -6,12 +6,12 @@ Make latex notation for best value and confidence boundaries.
 
 ## Parameters
 
-| Name      | Type                            | Description                                             | Default    |
-|-----------|---------------------------------|---------------------------------------------------------|------------|
-| `best`    | numpy.numpy.ndarray             | best value                                              | _required_ |
-| `min`     | numpy.numpy.ndarray             | lower boundary value                                    | _required_ |
-| `max`     | numpy.numpy.ndarray             | upper boundary value                                    | _required_ |
-| `ndigits` | (str, int, numpy.numpy.ndarray) | number of digits after decimal point, by default 'auto' | `'auto'`   |
+| Name      | Type                   | Description                                             | Default    |
+|-----------|------------------------|---------------------------------------------------------|------------|
+| `best`    | array_like             | best value                                              | _required_ |
+| `min`     | array_like             | lower boundary value                                    | _required_ |
+| `max`     | array_like             | upper boundary value                                    | _required_ |
+| `ndigits` | (str, int, array_like) | number of digits after decimal point, by default 'auto' | `'auto'`   |
 
 ## Returns
 
@@ -27,9 +27,20 @@ Make latex notation for best value and confidence boundaries.
 >>> err_up = np.random.uniform(0, 1, size=3)
 >>> xmin = x - err_lo
 >>> xmax = x + err_up
+```
+
+```python
 >>> latex_range(x, xmin, xmax)
-array(['$6.49_{-0.75}^{+0.06}$', '$5.966_{-0.717}^{+0.008}$',
-   '$2.3_{-0.8}^{+0.7}$'], dtype='<U25')
->>> latex_range(x, xmin, x + err_lo)
-array(['$6.5\pm0.7$', '$6.0\pm0.7$', '$2.3\pm0.8$'], dtype='<U11')
+array(['$4.326_{-0.745}^{+0.019}$', '$7.96_{-0.84}^{+0.13}$',
+   '$8.56_{-0.79}^{+0.15}$'], dtype='<U25')
+```
+
+```python
+>>> latex_range(x, xmin, x + err_lo, ndigits=2)
+array(['$5.92\pm0.94$', '$7.85\pm0.33$', '$6.48\pm0.00$'], dtype='<U13')
+```
+
+```python
+>>> latex_range(x, xmin, x + err_lo, ndigits='auto')
+array(['$5.9\pm0.9$', '$7.9\pm0.3$', '$6.4807\pm0.0008$'], dtype='<U17')
 ```

@@ -20,10 +20,14 @@ python -m pip install git+https://github.com/uskovgs/xraypy.git
 
 This module is designed for correct rounding of numbers.
 
+The primary functions are latex_range and latex_range_sci.
+
+### Numbers without exponents
+
 ```{python}
 import numpy as np
 import pandas as pd
-from xraypy.latex_table import latex_range
+from xraypy.latex_table import latex_range, latex_range_sci
 
 B=3
 x = np.random.uniform(1, 10, size=B)
@@ -32,6 +36,7 @@ err_up = np.random.uniform(0, 1, size=B)
 xmin = x - err_lo
 xmax = x + err_up
 ```
+
 
 Non symmetric errors:
 ```{python}
@@ -51,5 +56,52 @@ pd.DataFrame({
     "xmin" : xmin,
     "xmax" : xmax,
     "latex": latex_range(x, xmin, xmax)
+})
+```
+
+### Numbers with exponents
+
+```{python}
+x = np.array([1e21, 3e22, 1e23])
+err = np.array([0.1e21, 0.5e21, 0.1e23])
+```
+
+Auto number of digits
+
+```{python}
+pd.DataFrame({
+    "x" : x,
+    "err": err,
+    "latex": latex_range_sci(x, x-err, x+err)
+})
+```
+
+Fixed number of digits
+
+```{python}
+pd.DataFrame({
+    "x" : x,
+    "err": err,
+    "latex": latex_range_sci(x, x-err, x+err, ndigits=3)
+})
+```
+
+Make errors symmetric if possible
+
+```{python}
+pd.DataFrame({
+    "x" : x,
+    "err": err,
+    "latex": latex_range_sci(x, x-err, x+err, ndigits='auto', symmetry=True)
+})
+```
+
+The same power
+
+```{python}
+pd.DataFrame({
+    "x" : x,
+    "err": err,
+    "latex": latex_range_sci(x, x-err, x+err, ndigits='auto', symmetry=True, base_pow=22)
 })
 ```
