@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -155,7 +155,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a>
+  <ul class="collapse">
+  <li><a href="#numbers-without-exponents" id="toc-numbers-without-exponents" class="nav-link" data-scroll-target="#numbers-without-exponents">Numbers without exponents</a></li>
+  <li><a href="#numbers-with-exponents" id="toc-numbers-with-exponents" class="nav-link" data-scroll-target="#numbers-with-exponents">Numbers with exponents</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -188,10 +201,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="usage" class="level2">
 <h2 class="anchored" data-anchor-id="usage">Usage</h2>
 <p>This module is designed for correct rounding of numbers.</p>
+<p>The primary functions are latex_range and latex_range_sci.</p>
+<section id="numbers-without-exponents" class="level3">
+<h3 class="anchored" data-anchor-id="numbers-without-exponents">Numbers without exponents</h3>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> xraypy.latex_table <span class="im">import</span> latex_range</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> xraypy.latex_table <span class="im">import</span> latex_range, latex_range_sci</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>B<span class="op">=</span><span class="dv">3</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.uniform(<span class="dv">1</span>, <span class="dv">10</span>, size<span class="op">=</span>B)</span>
@@ -208,7 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"xmax"</span> : xmax,</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"latex"</span>: latex_range(x, xmin, xmax)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="146">
 <div>
 <div>
 
@@ -226,24 +242,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>6.051688</td>
-<td>5.938146</td>
-<td>6.973292</td>
-<td>$6.05_{-0.11}^{+0.92}$</td>
+<td>8.575625</td>
+<td>7.684654</td>
+<td>9.331089</td>
+<td>$8.6_{-0.9}^{+0.8}$</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>9.390410</td>
-<td>9.195756</td>
-<td>9.638920</td>
-<td>$9.39_{-0.19}^{+0.25}$</td>
+<td>2.214700</td>
+<td>1.457179</td>
+<td>2.429895</td>
+<td>$2.2_{-0.8}^{+0.2}$</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>6.046393</td>
-<td>5.620787</td>
-<td>7.030881</td>
-<td>$6.0_{-0.4}^{+1.0}$</td>
+<td>9.047348</td>
+<td>8.865595</td>
+<td>9.247207</td>
+<td>$9.05_{-0.18}^{+0.20}$</td>
 </tr>
 </tbody>
 </table>
@@ -261,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"xmax"</span> : xmax,</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"latex"</span>: latex_range(x, xmin, xmax)</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="147">
 <div>
 <div>
 
@@ -279,24 +295,219 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>6.051688</td>
-<td>5.938146</td>
-<td>6.165230</td>
-<td>$6.05\pm0.11$</td>
+<td>8.575625</td>
+<td>7.684654</td>
+<td>9.466596</td>
+<td>$8.6\pm0.9$</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>9.390410</td>
-<td>9.195756</td>
-<td>9.585065</td>
-<td>$9.39\pm0.19$</td>
+<td>2.214700</td>
+<td>1.457179</td>
+<td>2.972221</td>
+<td>$2.2\pm0.8$</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>6.046393</td>
-<td>5.620787</td>
-<td>6.471998</td>
-<td>$6.0\pm0.4$</td>
+<td>9.047348</td>
+<td>8.865595</td>
+<td>9.229100</td>
+<td>$9.05\pm0.18$</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="numbers-with-exponents" class="level3">
+<h3 class="anchored" data-anchor-id="numbers-with-exponents">Numbers with exponents</h3>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="fl">1e21</span>, <span class="fl">3e22</span>, <span class="fl">1e23</span>])</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>err <span class="op">=</span> np.array([<span class="fl">0.1e21</span>, <span class="fl">0.5e21</span>, <span class="fl">0.1e23</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Auto number of digits</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame({</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"x"</span> : x,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"err"</span>: err,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"latex"</span>: latex_range_sci(x, x<span class="op">-</span>err, x<span class="op">+</span>err)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="149">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">x</th>
+<th data-quarto-table-cell-role="th">err</th>
+<th data-quarto-table-cell-role="th">latex</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.000000e+21</td>
+<td>1.000000e+20</td>
+<td>$1.00_{-0.10}^{+0.10}~\times10^{21}$</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>3.000000e+22</td>
+<td>5.000000e+20</td>
+<td>$0.300_{-0.005}^{+0.005}~\times10^{23}$</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1.000000e+23</td>
+<td>1.000000e+22</td>
+<td>$1.00_{-0.10}^{+0.10}~\times10^{23}$</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<p>Fixed number of digits</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame({</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"x"</span> : x,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"err"</span>: err,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"latex"</span>: latex_range_sci(x, x<span class="op">-</span>err, x<span class="op">+</span>err, ndigits<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="150">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">x</th>
+<th data-quarto-table-cell-role="th">err</th>
+<th data-quarto-table-cell-role="th">latex</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.000000e+21</td>
+<td>1.000000e+20</td>
+<td>$1.000_{-0.100}^{+0.100}~\times10^{21}$</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>3.000000e+22</td>
+<td>5.000000e+20</td>
+<td>$0.300_{-0.005}^{+0.005}~\times10^{23}$</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1.000000e+23</td>
+<td>1.000000e+22</td>
+<td>$1.000_{-0.100}^{+0.100}~\times10^{23}$</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<p>Make errors symmetric if possible</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame({</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"x"</span> : x,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"err"</span>: err,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"latex"</span>: latex_range_sci(x, x<span class="op">-</span>err, x<span class="op">+</span>err, ndigits<span class="op">=</span><span class="st">'auto'</span>, symmetry<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="151">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">x</th>
+<th data-quarto-table-cell-role="th">err</th>
+<th data-quarto-table-cell-role="th">latex</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.000000e+21</td>
+<td>1.000000e+20</td>
+<td>$(1.00\pm0.10)~\times10^{21}$</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>3.000000e+22</td>
+<td>5.000000e+20</td>
+<td>$(0.300\pm0.005)~\times10^{23}$</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1.000000e+23</td>
+<td>1.000000e+22</td>
+<td>$(1.00\pm0.10)~\times10^{23}$</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<p>The same power</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame({</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"x"</span> : x,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"err"</span>: err,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"latex"</span>: latex_range_sci(x, x<span class="op">-</span>err, x<span class="op">+</span>err, ndigits<span class="op">=</span><span class="st">'auto'</span>, symmetry<span class="op">=</span><span class="va">True</span>, base_pow<span class="op">=</span><span class="dv">22</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="152">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">x</th>
+<th data-quarto-table-cell-role="th">err</th>
+<th data-quarto-table-cell-role="th">latex</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.000000e+21</td>
+<td>1.000000e+20</td>
+<td>$(0.100\pm0.010)~\times10^{22}$</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>3.000000e+22</td>
+<td>5.000000e+20</td>
+<td>$(3.00\pm0.05)~\times10^{22}$</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1.000000e+23</td>
+<td>1.000000e+22</td>
+<td>$(10.0\pm1.0)~\times10^{22}$</td>
 </tr>
 </tbody>
 </table>
@@ -307,6 +518,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

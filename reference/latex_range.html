@@ -103,7 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -185,6 +185,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">latex_range</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/latex_range_sci.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">latex_range_sci</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -239,7 +245,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#xraypy.latex_table.latex_range" id="toc-xraypy.latex_table.latex_range" class="nav-link active" data-scroll-target="#xraypy.latex_table.latex_range">latex_range</a>
+  <ul class="collapse">
+  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -254,10 +273,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
 <table class="table">
 <colgroup>
-<col style="width: 9%">
-<col style="width: 29%">
-<col style="width: 50%">
 <col style="width: 10%">
+<col style="width: 23%">
+<col style="width: 54%">
+<col style="width: 11%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -270,25 +289,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td><code>best</code></td>
-<td>numpy.numpy.ndarray</td>
+<td>array_like</td>
 <td>best value</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
 <td><code>min</code></td>
-<td>numpy.numpy.ndarray</td>
+<td>array_like</td>
 <td>lower boundary value</td>
 <td><em>required</em></td>
 </tr>
 <tr class="odd">
 <td><code>max</code></td>
-<td>numpy.numpy.ndarray</td>
+<td>array_like</td>
 <td>upper boundary value</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
 <td><code>ndigits</code></td>
-<td>(str, int, numpy.numpy.ndarray)</td>
+<td>(str, int, array_like)</td>
 <td>number of digits after decimal point, by default ‘auto’</td>
 <td><code>'auto'</code></td>
 </tr>
@@ -318,12 +337,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> err_lo <span class="op">=</span> np.random.uniform(<span class="dv">0</span>, <span class="dv">1</span>, size<span class="op">=</span><span class="dv">3</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> err_up <span class="op">=</span> np.random.uniform(<span class="dv">0</span>, <span class="dv">1</span>, size<span class="op">=</span><span class="dv">3</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> xmin <span class="op">=</span> x <span class="op">-</span> err_lo</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> xmax <span class="op">=</span> x <span class="op">+</span> err_up</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> latex_range(x, xmin, xmax)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>array([<span class="st">'$6.49_{-0.75}^{+0.06}$'</span>, <span class="st">'$5.966_{-0.717}^{+0.008}$'</span>,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>   <span class="st">'$2.3_{-0.8}^{+0.7}$'</span>], dtype<span class="op">=</span><span class="st">'&lt;U25'</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> latex_range(x, xmin, x <span class="op">+</span> err_lo)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>array([<span class="st">'$6.5\pm0.7$'</span>, <span class="st">'$6.0\pm0.7$'</span>, <span class="st">'$2.3\pm0.8$'</span>], dtype<span class="op">=</span><span class="st">'&lt;U11'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> xmax <span class="op">=</span> x <span class="op">+</span> err_up</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> latex_range(x, xmin, xmax)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>array([<span class="st">'$4.326_{-0.745}^{+0.019}$'</span>, <span class="st">'$7.96_{-0.84}^{+0.13}$'</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>   <span class="st">'$8.56_{-0.79}^{+0.15}$'</span>], dtype<span class="op">=</span><span class="st">'&lt;U25'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> latex_range(x, xmin, x <span class="op">+</span> err_lo, ndigits<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>array([<span class="st">'$5.92\pm0.94$'</span>, <span class="st">'$7.85\pm0.33$'</span>, <span class="st">'$6.48\pm0.00$'</span>], dtype<span class="op">=</span><span class="st">'&lt;U13'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> latex_range(x, xmin, x <span class="op">+</span> err_lo, ndigits<span class="op">=</span><span class="st">'auto'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>array([<span class="st">'$5.9\pm0.9$'</span>, <span class="st">'$7.9\pm0.3$'</span>, <span class="st">'$6.4807\pm0.0008$'</span>], dtype<span class="op">=</span><span class="st">'&lt;U17'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

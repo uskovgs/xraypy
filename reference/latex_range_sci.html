@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -118,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/check_ndigits.html">Mid level functions</a></li><li class="breadcrumb-item"><a href="../reference/get_n_signif_digits.html">get_n_signif_digits</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/latex_range.html">High level functions</a></li><li class="breadcrumb-item"><a href="../reference/latex_range_sci.html">latex_range_sci</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -153,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/latex_range_sci.html" class="sidebar-item-text sidebar-link">
+  <a href="../reference/latex_range_sci.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">latex_range_sci</span></a>
   </div>
 </li>
@@ -182,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/get_n_signif_digits.html" class="sidebar-item-text sidebar-link active">
+  <a href="../reference/get_n_signif_digits.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">get_n_signif_digits</span></a>
   </div>
 </li>
@@ -216,10 +250,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#xraypy.latex_table.get_n_signif_digits" id="toc-xraypy.latex_table.get_n_signif_digits" class="nav-link active" data-scroll-target="#xraypy.latex_table.get_n_signif_digits">get_n_signif_digits</a>
+  <li><a href="#xraypy.latex_table.latex_range_sci" id="toc-xraypy.latex_table.latex_range_sci" class="nav-link active" data-scroll-target="#xraypy.latex_table.latex_range_sci">latex_range_sci</a>
   <ul class="collapse">
   <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
   <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -230,13 +265,19 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="xraypy.latex_table.get_n_signif_digits" class="level1">
-<h1>get_n_signif_digits</h1>
-<p><code>latex_table.get_n_signif_digits(x)</code></p>
-<p>Get the optimal number of significant digits</p>
+<section id="xraypy.latex_table.latex_range_sci" class="level1">
+<h1>latex_range_sci</h1>
+<p><code>latex_table.latex_range_sci(best, min, max, ndigits='auto', symmetry=False, base_pow=None)</code></p>
+<p>Make latex notation for best value and confidence boundaries</p>
 <section id="parameters" class="level2">
 <h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
 <table class="table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 21%">
+<col style="width: 60%">
+<col style="width: 8%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Name</th>
@@ -247,10 +288,40 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>x</code></td>
+<td><code>best</code></td>
 <td>array_like</td>
-<td>Input data.</td>
+<td>best value</td>
 <td><em>required</em></td>
+</tr>
+<tr class="even">
+<td><code>min</code></td>
+<td>array_like</td>
+<td>lower boundary value</td>
+<td><em>required</em></td>
+</tr>
+<tr class="odd">
+<td><code>max</code></td>
+<td>array_like</td>
+<td>upper boundary value</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td><code>ndigits</code></td>
+<td>str,int,array_like optional</td>
+<td>number of digits after decimal point, by default “auto”</td>
+<td><code>'auto'</code></td>
+</tr>
+<tr class="odd">
+<td><code>symmetry</code></td>
+<td>bool</td>
+<td>if errors are symmetric show as value+/-err, by default False</td>
+<td><code>False</code></td>
+</tr>
+<tr class="even">
+<td><code>base_pow</code></td>
+<td>int</td>
+<td>set to numeric if you want to make column with the same power., by default None</td>
+<td><code>None</code></td>
 </tr>
 </tbody>
 </table>
@@ -266,11 +337,30 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>ndarray</td>
-<td>array of int type significant digits</td>
+<td>array_like</td>
+<td>string vector</td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<p>Set initial vector</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> x <span class="op">=</span> np.array([<span class="fl">1e21</span>, <span class="fl">3e22</span>, <span class="fl">1e23</span>])</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> err <span class="op">=</span> np.array([<span class="fl">0.1e21</span>, <span class="fl">0.5e21</span>, <span class="fl">0.1e23</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> latex_range_sci(best <span class="op">=</span> x, <span class="bu">min</span> <span class="op">=</span> x <span class="op">-</span> err, <span class="bu">max</span> <span class="op">=</span> x <span class="op">+</span> err, ndigits <span class="op">=</span> <span class="dv">2</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>[<span class="st">'$1.00_{-0.10}^{+0.10}~</span><span class="ch">\t</span><span class="st">imes10^</span><span class="sc">{21}</span><span class="st">$'</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="st">'$0.30_{-0.01}^{+0.00}~</span><span class="ch">\t</span><span class="st">imes10^</span><span class="sc">{23}</span><span class="st">$'</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="st">'$1.00_{-0.10}^{+0.10}~</span><span class="ch">\t</span><span class="st">imes10^</span><span class="sc">{23}</span><span class="st">$'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> latex_range_sci(x, x <span class="op">-</span> err, x <span class="op">+</span> err, ndigits <span class="op">=</span> <span class="dv">3</span>, symmetry <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>[<span class="st">'$(1.000\pm0.100)~</span><span class="ch">\t</span><span class="st">imes10^</span><span class="sc">{21}</span><span class="st">$'</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">'$(0.300\pm0.005)~</span><span class="ch">\t</span><span class="st">imes10^</span><span class="sc">{23}</span><span class="st">$'</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="st">'$(1.000\pm0.100)~</span><span class="ch">\t</span><span class="st">imes10^</span><span class="sc">{23}</span><span class="st">$'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> latex_range_sci(x, x <span class="op">-</span> err, x <span class="op">+</span> err, ndigits <span class="op">=</span> <span class="dv">2</span>, base_pow<span class="op">=</span><span class="dv">21</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>[<span class="st">'$1.00_{-0.10}^{+0.10}~</span><span class="ch">\t</span><span class="st">imes10^</span><span class="sc">{21}</span><span class="st">$'</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">'$30.00_{-0.50}^{+0.50}~</span><span class="ch">\t</span><span class="st">imes10^</span><span class="sc">{21}</span><span class="st">$'</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">'$100.00_{-10.00}^{+10.00}~</span><span class="ch">\t</span><span class="st">imes10^</span><span class="sc">{21}</span><span class="st">$'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
