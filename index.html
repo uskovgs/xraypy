@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="usage" class="level2">
 <h2 class="anchored" data-anchor-id="usage">Usage</h2>
 <p>This module is designed for correct rounding of numbers.</p>
-<p>The primary functions are latex_range and latex_range_sci.</p>
+<p>The primary functions are <code>latex_range</code> and <code>latex_range_sci</code>.</p>
 <section id="numbers-without-exponents" class="level3">
 <h3 class="anchored" data-anchor-id="numbers-without-exponents">Numbers without exponents</h3>
 <div class="cell" data-execution_count="1">
@@ -224,7 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"xmax"</span> : xmax,</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"latex"</span>: latex_range(x, xmin, xmax)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="146">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 <div>
 
@@ -242,24 +242,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>8.575625</td>
-<td>7.684654</td>
-<td>9.331089</td>
-<td>$8.6_{-0.9}^{+0.8}$</td>
+<td>3.163951</td>
+<td>2.979332</td>
+<td>4.082283</td>
+<td>$3.16_{-0.18}^{+0.92}$</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>2.214700</td>
-<td>1.457179</td>
-<td>2.429895</td>
-<td>$2.2_{-0.8}^{+0.2}$</td>
+<td>3.030980</td>
+<td>2.404447</td>
+<td>3.765541</td>
+<td>$3.0_{-0.6}^{+0.7}$</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>9.047348</td>
-<td>8.865595</td>
-<td>9.247207</td>
-<td>$9.05_{-0.18}^{+0.20}$</td>
+<td>1.815523</td>
+<td>1.508585</td>
+<td>2.775639</td>
+<td>$1.8_{-0.3}^{+1.0}$</td>
 </tr>
 </tbody>
 </table>
@@ -277,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"xmax"</span> : xmax,</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"latex"</span>: latex_range(x, xmin, xmax)</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="147">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 <div>
 
@@ -295,24 +295,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>8.575625</td>
-<td>7.684654</td>
-<td>9.466596</td>
-<td>$8.6\pm0.9$</td>
+<td>3.163951</td>
+<td>2.979332</td>
+<td>3.348570</td>
+<td>$3.16\pm0.18$</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>2.214700</td>
-<td>1.457179</td>
-<td>2.972221</td>
-<td>$2.2\pm0.8$</td>
+<td>3.030980</td>
+<td>2.404447</td>
+<td>3.657513</td>
+<td>$3.0\pm0.6$</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>9.047348</td>
-<td>8.865595</td>
-<td>9.229100</td>
-<td>$9.05\pm0.18$</td>
+<td>1.815523</td>
+<td>1.508585</td>
+<td>2.122460</td>
+<td>$1.8\pm0.3$</td>
 </tr>
 </tbody>
 </table>
@@ -335,7 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"err"</span>: err,</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"latex"</span>: latex_range_sci(x, x<span class="op">-</span>err, x<span class="op">+</span>err)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="149">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 <div>
 
@@ -382,7 +382,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"err"</span>: err,</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"latex"</span>: latex_range_sci(x, x<span class="op">-</span>err, x<span class="op">+</span>err, ndigits<span class="op">=</span><span class="dv">3</span>)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="150">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 <div>
 
@@ -429,7 +429,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"err"</span>: err,</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"latex"</span>: latex_range_sci(x, x<span class="op">-</span>err, x<span class="op">+</span>err, ndigits<span class="op">=</span><span class="st">'auto'</span>, symmetry<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="151">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 <div>
 
@@ -476,7 +476,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"err"</span>: err,</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"latex"</span>: latex_range_sci(x, x<span class="op">-</span>err, x<span class="op">+</span>err, ndigits<span class="op">=</span><span class="st">'auto'</span>, symmetry<span class="op">=</span><span class="va">True</span>, base_pow<span class="op">=</span><span class="dv">22</span>)</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="152">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 <div>
 
