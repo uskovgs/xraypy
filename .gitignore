@@ -4,6 +4,7 @@
 /.quarto/
 _site/
 objects.json
-src/
+*.pyc
+src/xraypy/__pycache__/
 *.code-workspace
 TODO
