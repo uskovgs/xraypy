@@ -48,7 +48,7 @@ pd.DataFrame({
 })
 ```
 
-Symemtric errors:
+Symmetric errors:
 ```{python}
 xmax = x + err_lo
 pd.DataFrame({
