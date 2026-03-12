@@ -10,6 +10,8 @@ import astropy.units as u
 
 def plot_image(
     filename,
+    img_data=None,
+    wcs=None,
     title=None,
     caption=None,
     cmap="gray_r",
@@ -28,7 +30,14 @@ def plot_image(
     Parameters
     ----------
     filename : str or Path
-        FITS file path (primary HDU used).
+        FITS file path (primary HDU used). Used when ``img_data`` or ``wcs`` are
+        not provided.
+    img_data : array-like, optional
+        Image array to plot. If provided together with ``wcs``, file reading is
+        skipped.
+    wcs : astropy.wcs.WCS, optional
+        WCS for ``img_data``. If provided together with ``img_data``, file
+        reading is skipped.
     title : str, optional
     cmap : str or Colormap, optional
     stretch : astropy.visualization.BaseStretch or None
@@ -63,10 +72,17 @@ def plot_image(
     if interval is None:
         interval = PercentileInterval(99.5)
 
-    with fits.open(filename) as hdul:
-        hdu = hdul[0]
-        img_data = np.squeeze(hdu.data)
-        wcs = WCS(hdu.header)
+    if img_data is not None and wcs is not None:
+        img_data = np.squeeze(img_data)
+    else:
+        if filename is None:
+            raise ValueError(
+                "filename is required when img_data and wcs are not both provided"
+            )
+        with fits.open(filename) as hdul:
+            hdu = hdul[0]
+            img_data = np.squeeze(hdu.data)
+            wcs = WCS(hdu.header)
 
     vmin, vmax = interval.get_limits(img_data)
     norm = ImageNormalize(vmin=vmin, vmax=vmax, stretch=stretch, clip=False)
